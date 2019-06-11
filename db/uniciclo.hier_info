@@ -1,0 +1,45 @@
+|Control
+iCLK => ~NO_FANOUT~
+iInstruction[0] => ~NO_FANOUT~
+iInstruction[1] => ~NO_FANOUT~
+iInstruction[2] => ~NO_FANOUT~
+iInstruction[3] => ~NO_FANOUT~
+iInstruction[4] => ~NO_FANOUT~
+iInstruction[5] => ~NO_FANOUT~
+iInstruction[6] => ~NO_FANOUT~
+iInstruction[7] => ~NO_FANOUT~
+iInstruction[8] => ~NO_FANOUT~
+iInstruction[9] => ~NO_FANOUT~
+iInstruction[10] => ~NO_FANOUT~
+iInstruction[11] => ~NO_FANOUT~
+iInstruction[12] => ~NO_FANOUT~
+iInstruction[13] => ~NO_FANOUT~
+iInstruction[14] => ~NO_FANOUT~
+iInstruction[15] => ~NO_FANOUT~
+iInstruction[16] => ~NO_FANOUT~
+iInstruction[17] => ~NO_FANOUT~
+iInstruction[18] => ~NO_FANOUT~
+iInstruction[19] => ~NO_FANOUT~
+iInstruction[20] => ~NO_FANOUT~
+iInstruction[21] => ~NO_FANOUT~
+iInstruction[22] => ~NO_FANOUT~
+iInstruction[23] => ~NO_FANOUT~
+iInstruction[24] => ~NO_FANOUT~
+iInstruction[25] => ~NO_FANOUT~
+iInstruction[26] => ~NO_FANOUT~
+iInstruction[27] => ~NO_FANOUT~
+iInstruction[28] => ~NO_FANOUT~
+iInstruction[29] => ~NO_FANOUT~
+iInstruction[30] => ~NO_FANOUT~
+iInstruction[31] => ~NO_FANOUT~
+Reg2Loc <= <GND>
+Branch <= <GND>
+MemRead <= <GND>
+MemtoReg <= <GND>
+ALUOp[0] <= <GND>
+ALUOp[1] <= <VCC>
+MemWrite <= <VCC>
+ALUSrc <= <GND>
+RegWrite <= <GND>
+
+

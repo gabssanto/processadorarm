@@ -1,0 +1,58 @@
+/**
+*
+*	CONTROLE GERAL DA CPU
+*
+*/
+
+module Controle(
+	iCLK,
+	iInstruction;
+	Reg2Loc,
+	Branch,
+	MemRead,
+	MemtoReg,
+	ALUOp,
+	MemWrite,
+	ALUSrc,
+	RegWrite
+);
+
+//Definicao de I/O
+
+input wire iCLK;
+input wire [31:0] iInstruction;
+wire Opcode = {iInstruction[31:21]};
+output wire Reg2Loc, Branch, MemRead, MemtoReg, MemWrite, ALUSrc, RegWrite;
+output wire [3:0] ALUOp;
+
+initial
+begin
+			Reg2Loc <= 1b'0;
+			Branch <= 1b'0;
+			MemRead <= 1b'0;
+			MemtoReg <= 1b'0;
+			MemWrite <= 1b'0;
+			ALUSrc <= 1b'0;
+			RegWrite <= 1b'0;
+			ALUOp <= 3b'000;
+end
+
+always @(Opcode)
+begin
+	case(Opcode)
+		OPADD:
+		 begin
+				
+		 end
+		
+		OPSUB
+		
+		OPAND
+		
+		OPORR
+		
+		OPLDUR
+		
+		OPSTUR
+		
+	

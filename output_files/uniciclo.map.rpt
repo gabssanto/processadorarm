@@ -1,5 +1,5 @@
 Analysis & Synthesis report for uniciclo
-Mon Jun 10 20:46:24 2019
+Mon Jun 10 23:48:11 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -36,10 +36,10 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Mon Jun 10 20:46:24 2019           ;
+; Analysis & Synthesis Status ; Failed - Mon Jun 10 23:48:11 2019           ;
 ; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name               ; uniciclo                                    ;
-; Top-level Entity Name       ; ALU                                         ;
+; Top-level Entity Name       ; Control                                     ;
 ; Family                      ; Cyclone V                                   ;
 ; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
 ; Total registers             ; N/A until Partition Merge                   ;
@@ -57,7 +57,7 @@ refer to the applicable agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; ALU                ; uniciclo           ;
+; Top-level entity name                                                           ; Control            ; uniciclo           ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Verilog Show LMF Mapping Messages                                               ; Off                ;                    ;
 ; Verilog Version                                                                 ; SystemVerilog_2005 ; Verilog_2001       ;
@@ -161,7 +161,7 @@ refer to the applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Jun 10 20:45:49 2019
+    Info: Processing started: Mon Jun 10 23:47:47 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off uniciclo -c uniciclo
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -176,14 +176,15 @@ Info (12021): Found 1 design units, including 1 entities, in source file control
     Info (12023): Found entity 1: Control File: C:/Users/espir/Documents/trab-oac/Control.v Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file datapath.v
     Info (12023): Found entity 1: Datapath File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 12
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.v(114): created implicit net for "wAddressRt" File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 114
 Error (10161): Verilog HDL error at DataPath.v(14): object "iCLKMemory" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 14
 Error (10161): Verilog HDL error at DataPath.v(16): object "iReset" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 16
 Error (10206): Verilog HDL Module Declaration error at DataPath.v(35): top module port "iCLKMem" is not found in the port list File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 35
 Error (10206): Verilog HDL Module Declaration error at DataPath.v(35): top module port "iRST" is not found in the port list File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 35
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 4 errors, 1 warning
-    Error: Peak virtual memory: 4786 megabytes
-    Error: Processing ended: Mon Jun 10 20:46:25 2019
-    Error: Elapsed time: 00:00:36
-    Error: Total CPU time (on all processors): 00:00:27
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 4 errors, 2 warnings
+    Error: Peak virtual memory: 4774 megabytes
+    Error: Processing ended: Mon Jun 10 23:48:11 2019
+    Error: Elapsed time: 00:00:24
+    Error: Total CPU time (on all processors): 00:00:56
 
 

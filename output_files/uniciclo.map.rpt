@@ -1,5 +1,5 @@
 Analysis & Synthesis report for uniciclo
-Mon Jun 10 23:48:11 2019
+Wed Jun 12 11:01:35 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -10,7 +10,16 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Port Connectivity Checks: "ALU:ALUunit"
+ 11. Port Connectivity Checks: "ALUControl:ALUControlunit"
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -33,22 +42,27 @@ refer to the applicable agreement for further details.
 
 
 
-+---------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                              ;
-+-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Mon Jun 10 23:48:11 2019           ;
-; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
-; Revision Name               ; uniciclo                                    ;
-; Top-level Entity Name       ; Control                                     ;
-; Family                      ; Cyclone V                                   ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Wed Jun 12 11:01:35 2019       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; uniciclo                                    ;
+; Top-level Entity Name           ; DataPath                                    ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 191                                         ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -57,7 +71,7 @@ refer to the applicable agreement for further details.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; Control            ; uniciclo           ;
+; Top-level entity name                                                           ; DataPath           ; uniciclo           ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Verilog Show LMF Mapping Messages                                               ; Off                ;                    ;
 ; Verilog Version                                                                 ; SystemVerilog_2005 ; Verilog_2001       ;
@@ -155,13 +169,130 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                 ;
++----------------------------------+-----------------+------------------------+------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                   ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------+---------+
+; ALU.v                            ; yes             ; User Verilog HDL File  ; C:/Users/espir/Documents/trab-oac/ALU.v        ;         ;
+; Parametros.v                     ; yes             ; User Verilog HDL File  ; C:/Users/espir/Documents/trab-oac/Parametros.v ;         ;
+; ALUControl.v                     ; yes             ; User Verilog HDL File  ; C:/Users/espir/Documents/trab-oac/ALUControl.v ;         ;
+; DataPath.v                       ; yes             ; User Verilog HDL File  ; C:/Users/espir/Documents/trab-oac/DataPath.v   ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimate of Logic utilization (ALMs needed) ; 0     ;
+;                                             ;       ;
+; Combinational ALUT usage for logic          ; 0     ;
+;     -- 7 input functions                    ; 0     ;
+;     -- 6 input functions                    ; 0     ;
+;     -- 5 input functions                    ; 0     ;
+;     -- 4 input functions                    ; 0     ;
+;     -- <=3 input functions                  ; 0     ;
+;                                             ;       ;
+; Dedicated logic registers                   ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 191   ;
+;                                             ;       ;
+; Total DSP Blocks                            ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; iCLK  ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 191   ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |DataPath                  ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 191  ; 0            ; |DataPath           ; DataPath    ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; PC[0..63]                              ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 64 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ALU:ALUunit"                                                                              ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Out[63..1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; Zero       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "ALUControl:ALUControlunit" ;
++---------+-------+----------+--------------------------+
+; Port    ; Type  ; Severity ; Details                  ;
++---------+-------+----------+--------------------------+
+; iOpcode ; Input ; Info     ; Stuck at GND             ;
++---------+-------+----------+--------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_lcell_comb     ; 1                           ;
+;     normal            ; 1                           ;
+;         0 data inputs ; 1                           ;
+; boundary_port         ; 191                         ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Jun 10 23:47:47 2019
+    Info: Processing started: Wed Jun 12 11:01:12 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off uniciclo -c uniciclo
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -174,17 +305,258 @@ Info (12021): Found 1 design units, including 1 entities, in source file alucont
     Info (12023): Found entity 1: ALUControl File: C:/Users/espir/Documents/trab-oac/ALUControl.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file control.v
     Info (12023): Found entity 1: Control File: C:/Users/espir/Documents/trab-oac/Control.v Line: 7
+Warning (10238): Verilog Module Declaration warning at DataPath.v(32): ignored anonymous port(s) indicated by duplicate or dangling comma(s) in the port list for module "DataPath" File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 32
 Info (12021): Found 1 design units, including 1 entities, in source file datapath.v
-    Info (12023): Found entity 1: Datapath File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 12
-Warning (10236): Verilog HDL Implicit Net warning at DataPath.v(114): created implicit net for "wAddressRt" File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 114
-Error (10161): Verilog HDL error at DataPath.v(14): object "iCLKMemory" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 14
-Error (10161): Verilog HDL error at DataPath.v(16): object "iReset" is not declared. Verify the object name is correct. If the name is correct, declare the object. File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 16
-Error (10206): Verilog HDL Module Declaration error at DataPath.v(35): top module port "iCLKMem" is not found in the port list File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 35
-Error (10206): Verilog HDL Module Declaration error at DataPath.v(35): top module port "iRST" is not found in the port list File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 35
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 4 errors, 2 warnings
-    Error: Peak virtual memory: 4774 megabytes
-    Error: Processing ended: Mon Jun 10 23:48:11 2019
-    Error: Elapsed time: 00:00:24
-    Error: Total CPU time (on all processors): 00:00:56
+    Info (12023): Found entity 1: DataPath File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 12
+Warning (10236): Verilog HDL Implicit Net warning at DataPath.v(120): created implicit net for "wAddressRt" File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 120
+Info (12127): Elaborating entity "DataPath" for the top level hierarchy
+Warning (10858): Verilog HDL warning at DataPath.v(69): object wiPC used but never assigned File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 69
+Warning (10858): Verilog HDL warning at DataPath.v(71): object wInstruction used but never assigned File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 71
+Warning (10036): Verilog HDL or VHDL warning at DataPath.v(80): object "wAddressRn" assigned a value but never read File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 80
+Warning (10858): Verilog HDL warning at DataPath.v(82): object wRead2 used but never assigned File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 82
+Warning (10858): Verilog HDL warning at DataPath.v(91): object wReadData used but never assigned File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 91
+Warning (10230): Verilog HDL assignment warning at DataPath.v(120): truncated value with size 5 to match size of target (1) File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 120
+Warning (10235): Verilog HDL Always Construct warning at DataPath.v(157): variable "wAddressRm" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 157
+Warning (10230): Verilog HDL assignment warning at DataPath.v(157): truncated value with size 5 to match size of target (1) File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 157
+Warning (10235): Verilog HDL Always Construct warning at DataPath.v(159): variable "wAddressRt" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 159
+Warning (10235): Verilog HDL Always Construct warning at DataPath.v(168): variable "wRead2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 168
+Warning (10230): Verilog HDL assignment warning at DataPath.v(168): truncated value with size 64 to match size of target (1) File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 168
+Warning (10235): Verilog HDL Always Construct warning at DataPath.v(170): variable "wInstructionExtended" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 170
+Warning (10230): Verilog HDL assignment warning at DataPath.v(170): truncated value with size 64 to match size of target (1) File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 170
+Warning (10235): Verilog HDL Always Construct warning at DataPath.v(178): variable "wPC_MAIS_4" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 178
+Warning (10230): Verilog HDL assignment warning at DataPath.v(178): truncated value with size 64 to match size of target (2) File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 178
+Warning (10235): Verilog HDL Always Construct warning at DataPath.v(181): variable "wBranchANDZero" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 181
+Warning (10270): Verilog HDL Case Statement warning at DataPath.v(176): incomplete case statement has no default case item File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 176
+Warning (10240): Verilog HDL Always Construct warning at DataPath.v(174): inferring latch(es) for variable "wControlOrigemPC", which holds its previous value in one or more paths through the always construct File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 174
+Warning (10235): Verilog HDL Always Construct warning at DataPath.v(189): variable "wALUResult" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 189
+Warning (10230): Verilog HDL assignment warning at DataPath.v(189): truncated value with size 64 to match size of target (1) File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 189
+Warning (10235): Verilog HDL Always Construct warning at DataPath.v(191): variable "wReadData" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 191
+Warning (10230): Verilog HDL assignment warning at DataPath.v(191): truncated value with size 64 to match size of target (1) File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 191
+Warning (10030): Net "wInstruction" at DataPath.v(71) has no driver or initial value, using a default initial value '0' File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 71
+Warning (10030): Net "wRead2[0]" at DataPath.v(82) has no driver or initial value, using a default initial value '0' File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 82
+Warning (10030): Net "wReadData[0]" at DataPath.v(91) has no driver or initial value, using a default initial value '0' File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 91
+Warning (10030): Net "wControlBranch" at DataPath.v(45) has no driver or initial value, using a default initial value '0' File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 45
+Warning (10034): Output port "wRegisterShow" at DataPath.v(41) has no driver File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+Warning (10034): Output port "wControlRegWrite" at DataPath.v(43) has no driver File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 43
+Warning (10034): Output port "wControlMemRead" at DataPath.v(43) has no driver File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 43
+Warning (10034): Output port "wControlMemWrite" at DataPath.v(43) has no driver File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 43
+Info (10041): Inferred latch for "wControlOrigemPC[0]" at DataPath.v(174) File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 174
+Info (10041): Inferred latch for "wControlOrigemPC[1]" at DataPath.v(174) File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 174
+Info (12128): Elaborating entity "ALUControl" for hierarchy "ALUControl:ALUControlunit" File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 136
+Warning (10230): Verilog HDL assignment warning at ALUControl.v(11): truncated value with size 3 to match size of target (1) File: C:/Users/espir/Documents/trab-oac/ALUControl.v Line: 11
+Warning (10235): Verilog HDL Always Construct warning at ALUControl.v(22): variable "DefOp" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/espir/Documents/trab-oac/ALUControl.v Line: 22
+Warning (10199): Verilog HDL Case Statement warning at ALUControl.v(25): case item expression never matches the case expression File: C:/Users/espir/Documents/trab-oac/ALUControl.v Line: 25
+Warning (10199): Verilog HDL Case Statement warning at ALUControl.v(29): case item expression never matches the case expression File: C:/Users/espir/Documents/trab-oac/ALUControl.v Line: 29
+Warning (10270): Verilog HDL Case Statement warning at ALUControl.v(15): incomplete case statement has no default case item File: C:/Users/espir/Documents/trab-oac/ALUControl.v Line: 15
+Warning (10240): Verilog HDL Always Construct warning at ALUControl.v(13): inferring latch(es) for variable "oControlSignal", which holds its previous value in one or more paths through the always construct File: C:/Users/espir/Documents/trab-oac/ALUControl.v Line: 13
+Info (10041): Inferred latch for "oControlSignal[0]" at ALUControl.v(13) File: C:/Users/espir/Documents/trab-oac/ALUControl.v Line: 13
+Info (10041): Inferred latch for "oControlSignal[1]" at ALUControl.v(13) File: C:/Users/espir/Documents/trab-oac/ALUControl.v Line: 13
+Info (10041): Inferred latch for "oControlSignal[2]" at ALUControl.v(13) File: C:/Users/espir/Documents/trab-oac/ALUControl.v Line: 13
+Info (10041): Inferred latch for "oControlSignal[3]" at ALUControl.v(13) File: C:/Users/espir/Documents/trab-oac/ALUControl.v Line: 13
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:ALUunit" File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 147
+Warning (10230): Verilog HDL assignment warning at ALU.v(10): truncated value with size 32 to match size of target (1) File: C:/Users/espir/Documents/trab-oac/ALU.v Line: 10
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "wPC[0]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[1]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[2]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[3]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[4]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[5]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[6]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[7]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[8]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[9]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[10]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[11]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[12]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[13]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[14]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[15]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[16]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[17]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[18]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[19]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[20]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[21]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[22]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[23]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[24]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[25]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[26]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[27]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[28]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[29]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[30]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[31]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[32]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[33]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[34]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[35]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[36]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[37]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[38]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[39]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[40]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[41]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[42]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[43]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[44]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[45]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[46]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[47]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[48]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[49]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[50]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[51]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[52]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[53]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[54]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[55]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[56]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[57]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[58]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[59]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[60]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[61]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[62]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wPC[63]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wControlReg2Loc" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 45
+    Warning (13410): Pin "wControlALUSrc" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 45
+    Warning (13410): Pin "wControlMemtoReg" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 45
+    Warning (13410): Pin "wControlRegWrite" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 43
+    Warning (13410): Pin "wControlMemRead" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 43
+    Warning (13410): Pin "wControlMemWrite" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 43
+    Warning (13410): Pin "wControlOrigemPC[0]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 174
+    Warning (13410): Pin "wControlOrigemPC[1]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 174
+    Warning (13410): Pin "wControlOpcode[0]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 46
+    Warning (13410): Pin "wControlOpcode[1]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 46
+    Warning (13410): Pin "wControlOpcode[2]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 46
+    Warning (13410): Pin "wControlOpcode[3]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 46
+    Warning (13410): Pin "wControlOpcode[4]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 46
+    Warning (13410): Pin "wControlOpcode[5]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 46
+    Warning (13410): Pin "wControlOpcode[6]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 46
+    Warning (13410): Pin "wControlOpcode[7]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 46
+    Warning (13410): Pin "wControlOpcode[8]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 46
+    Warning (13410): Pin "wControlOpcode[9]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 46
+    Warning (13410): Pin "wControlOpcode[10]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 46
+    Warning (13410): Pin "wControlBranch" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 45
+    Warning (13410): Pin "wRegisterShow[0]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[1]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[2]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[3]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[4]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[5]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[6]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[7]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[8]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[9]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[10]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[11]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[12]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[13]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[14]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[15]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[16]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[17]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[18]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[19]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[20]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[21]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[22]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[23]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[24]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[25]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[26]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[27]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[28]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[29]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[30]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[31]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[32]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[33]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[34]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[35]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[36]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[37]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[38]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[39]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[40]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[41]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[42]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[43]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[44]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[45]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[46]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[47]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[48]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[49]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[50]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[51]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[52]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[53]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[54]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[55]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[56]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[57]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[58]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[59]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[60]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[61]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[62]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wRegisterShow[63]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 41
+    Warning (13410): Pin "wControlALUOp[0]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 44
+    Warning (13410): Pin "wControlALUOp[1]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 44
+    Warning (13410): Pin "woInstruction[0]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[1]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[2]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[3]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[4]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[5]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[6]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[7]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[8]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[9]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[10]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[11]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[12]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[13]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[14]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[15]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[16]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[17]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[18]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[19]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[20]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[21]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[22]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[23]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[24]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[25]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[26]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[27]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[28]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[29]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[30]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+    Warning (13410): Pin "woInstruction[31]" is stuck at GND File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 42
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 9 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "iCLK" File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 37
+    Warning (15610): No output dependent on input pin "iCLKMemory" File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 37
+    Warning (15610): No output dependent on input pin "iCLK50" File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 37
+    Warning (15610): No output dependent on input pin "iReset" File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 37
+    Warning (15610): No output dependent on input pin "wRegisterShowSelect[0]" File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 38
+    Warning (15610): No output dependent on input pin "wRegisterShowSelect[1]" File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 38
+    Warning (15610): No output dependent on input pin "wRegisterShowSelect[2]" File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 38
+    Warning (15610): No output dependent on input pin "wRegisterShowSelect[3]" File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 38
+    Warning (15610): No output dependent on input pin "wRegisterShowSelect[4]" File: C:/Users/espir/Documents/trab-oac/DataPath.v Line: 38
+Info (21057): Implemented 191 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
+    Info (21059): Implemented 182 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 233 warnings
+    Info: Peak virtual memory: 4807 megabytes
+    Info: Processing ended: Wed Jun 12 11:01:35 2019
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:51
 
 

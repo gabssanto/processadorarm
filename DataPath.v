@@ -9,7 +9,7 @@
  */
 //os wXXXX da entrada sao na verdade oXXXX
 
-module Datapath (
+module DataPath (
 	iCLK,
 	iCLKMemory,
 	iCLK50,
@@ -23,25 +23,29 @@ module Datapath (
 	wControlMemWrite,
 	wControlOrigemPC,
 	wControlOpcode,
+	wControlBranch,	// VER SE REALMENTE VAI SER UTIL 
 	wRegisterShowSelect,			//wRegDispSelect
 	wRegisterShow, 				//wRegDisp
 	wControlALUOp,
 	woInstruction,					//woInstr
-	wDebug
+	//wDebug
 );
 
 //DEFINICAO DE I/O
 
-input wire iCLK, iCLKMem, iCLK50, iRST;
+//INPUTS
+input wire iCLK, iCLKMemory, iCLK50, iReset;
+input wire [4:0] wRegisterShowSelect;
+
+//OUTPUTS
 output wire [63:0] wPC, wRegisterShow;
 output wire [31:0] woInstruction;
 output wire wControlRegWrite, wControlMemRead, wControlMemWrite;
-output wire [1:0] wControlALUOp, wControlOrigemPC;
-output wire wControlReg2Loc, wControlALUSrc, wControlMemtoReg;
+output wire [1:0] wControlALUOp, wControlOrigemPC;						
+output wire wControlReg2Loc, wControlALUSrc, wControlMemtoReg, wControlBranch;//ACHO QUE VAI SER UTIL O BRANCH
 output wire [10:0] wControlOpcode;
-input wire [4:0] wRegisterShowSelect;
 //Para Debug
-output wire [63:0] wDebug;
+//output wire [63:0] wDebug;
 
 	
 //DEFINICAO DE VARIAVEIS
@@ -63,7 +67,7 @@ reg [63:0] PC;
 wire [63:0] wPC_MAIS_4;
 //WIRE INPUT PC
 wire [63:0] wiPC;
-//SIRE INSTRUCTION
+//WIRE INSTRUCTION
 wire [31:0] wInstruction;
 
 
@@ -91,6 +95,8 @@ wire [31:0] wZero32;
 //EXTENSAO DE SINAL DE 32 PARA 64 BITS, nao sei se ta funcionando corretamente ainda 
 wire [63:0] wInstructionExtended;
 
+wire wBranchANDZero;
+
 //POSTERIOR IMPLEMENTACAO
 //wire [63:0] wBranchPC;
 /******************************************************************************
@@ -115,6 +121,7 @@ assign wAddressRt = wInstruction[4:0];
 assign woInstruction = wInstruction;
 assign wZero32 = 32'b0;
 assign wInstructionExtended = {wZero32, wInstruction};
+assign wBranchANDZero = wZero & wControlBranch;
 
 //Memoria de Instrucoes
 
@@ -122,7 +129,22 @@ assign wInstructionExtended = {wZero32, wInstruction};
 
 //ALU Control
 
+ALUControl ALUControlunit(
+	.iOpcode(wControlOpcode),
+	.iALUOp(wControlALUOp),
+	.oControlSignal(wALUControl)
+);
+
+
 //ALU
+
+ALU ALUunit(
+	.ALUControlInput(wALUControl),
+	.OperandoA(wRead1),
+	.OperandoB(wALUSrc),
+	.Out(wALUResult),
+	.Zero(wZero)
+);
 
 //Memoria de Dados
 
@@ -155,8 +177,28 @@ begin
 		1'b0:
 			wControlOrigemPC <= wPC_MAIS_4;
 		//PARA SER 1 PRECISA DE UM AND ENTRE BRANCH E ZERO
-		//1'b1:
+		1'b1:
+			wControlOrigemPC <= wBranchANDZero;
 	endcase
+end
+
+always @(wControlMemtoReg)
+begin
+	case(wControlMemtoReg)
+	1'b0:
+		wControlMemtoReg <= wALUResult;		
+	1'b1:
+		wControlMemtoReg <= wReadData;
+	endcase
+end
+
+always @(posedge iReset)
+begin
+	if(iReset)
+		PC <= 64'b0;
+	else
+		PC <= wiPC;
+
 end
 
 

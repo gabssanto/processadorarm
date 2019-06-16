@@ -3,4 +3,4 @@
 - Gabriel Oliveira do Espírito Santo
 - Carlos Gabriel (completa aqui dps nao sei o nome todo hhaahhahaha)
 - Andrey Calaça Resende
-- Divino (nao sei o nome ocmpleto tb, completa aqui hahahahahha)
+- Divino Junio Batista Lopes

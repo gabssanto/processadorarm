@@ -1,0 +1,9 @@
+module DataMemory(
+	.iCLK(iCLK),
+	.iCLKMem(iCLKMem),
+	.iAddress(wALUResult),
+	.iWriteData(wRead2),
+	.iMemRead(wControlMemRead),
+	.iMemWrite(wControlMemWrite),
+	.oMemData(wReadData)
+);

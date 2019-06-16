@@ -1,16 +1,16 @@
-Fitter Status : Successful - Sun Jun 16 15:02:49 2019
+Fitter Status : Successful - Sun Jun 16 19:57:14 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : uniciclo
-Top-level Entity Name : Registers
+Top-level Entity Name : DataMemory
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 1,170 / 32,070 ( 4 % )
-Total registers : 992
-Total pins : 0 / 457 ( 0 % )
-Total virtual pins : 344
-Total block memory bits : 0 / 4,065,280 ( 0 % )
-Total RAM Blocks : 0 / 397 ( 0 % )
+Logic utilization (in ALMs) : 188 / 32,070 ( < 1 % )
+Total registers : 170
+Total pins : 131 / 457 ( 29 % )
+Total virtual pins : 65
+Total block memory bits : 524,288 / 4,065,280 ( 13 % )
+Total RAM Blocks : 64 / 397 ( 16 % )
 Total DSP Blocks : 0 / 87 ( 0 % )
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0

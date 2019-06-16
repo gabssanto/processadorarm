@@ -147,7 +147,15 @@ ALU ALUunit(
 );
 
 //Memoria de Dados
-
+DataMemory memData(
+	.iCLK(iCLK),
+	.iCLKMem(iCLKMem),
+	.iAddress(wALUResult),
+	.iWriteData(wRead2),
+	.iMemRead(wControlMemRead),
+	.iMemWrite(wControlMemWrite),
+	.oMemData(wReadData)
+);
 //Control
 
 always @(wControlReg2Loc)

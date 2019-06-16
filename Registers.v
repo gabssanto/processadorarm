@@ -1,0 +1,66 @@
+/*
+ * Registers.v
+ *
+ * Main processor register bank testbench.
+ * Stores information in 63-bit registers. 31 registers are available for
+ * writing and 32 are available for reading.
+ * Also allows for two simultaneous data reads, has a write enable signal
+ * input, is clocked and has an asynchronous reset signal input.
+ */
+module Registers (iCLK, iCLR, iReadRegister1, iReadRegister2, iWriteRegister,
+	iWriteData, iRegWrite, oReadData1, oReadData2, iRegDispSelect, oRegDisp,iRegA0,iA0en);
+
+/* I/O type definition */
+input wire [4:0] iReadRegister1, iReadRegister2, iWriteRegister,
+	iRegDispSelect;
+input wire [63:0] iWriteData, iRegA0;
+input wire iCLK, iCLR, iRegWrite, iA0en;
+output wire [63:0] oReadData1, oReadData2, oRegDisp;
+
+/* Local register bank */
+reg [31:0] registers[31:0];
+
+integer i;
+
+initial
+begin
+	for (i = 0; i <= 31; i = i + 1)
+	begin
+		registers[i] = 64'b0;
+	end
+	registers[5'd28] = 64'h7fffeffc;  // $sp = Maximo - 33
+end
+
+/* Output definition */
+assign oReadData1 =	registers[iReadRegister1];
+assign oReadData2 =	registers[iReadRegister2];
+
+assign oRegDisp =	registers[iRegDispSelect];
+
+
+/* Main block for writing and reseting */
+always @(posedge iCLK)
+begin
+	if (iCLR)
+	begin
+		for (i = 1; i <= 31; i = i + 1)
+		begin
+			registers[i] = 64'b0;
+		end
+		registers[5'd28] = 64'h7fffeffc;
+	end
+	else if (iCLK && iRegWrite)
+	begin
+		if (iWriteRegister != 5'd31)
+		begin
+			registers[iWriteRegister] =	iWriteData;
+		end
+	end
+
+	/* Writing contents of iRegA0 into $a0 */
+	if(iA0en)
+		registers[5'd4] = iRegA0;
+end
+
+endmodule
+

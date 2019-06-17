@@ -5,20 +5,21 @@
  * Stores information in 63-bit registers. 31 registers are available for
  * writing and 32 are available for reading.
  * Also allows for two simultaneous data reads, has a write enable signal
- * input, is clocked and has an asynchronous reset signal input.
+ * input, is clocked and has an synchronous reset signal input.
  */
-module Registers (iCLK, iCLR, iReadRegister1, iReadRegister2, iWriteRegister,
-	iWriteData, iRegWrite, oReadData1, oReadData2, iRegDispSelect, oRegDisp,iRegA0,iA0en);
+module Registers (iCLK, iReset, iAddressRm, iAddressRn, iAddressRt,
+	iWriteData, iRegControlWrite, oRead1, oRead2, iRegisterShow, oRegisterShow);
 
-/* I/O type definition */
-input wire [4:0] iReadRegister1, iReadRegister2, iWriteRegister,
-	iRegDispSelect;
-input wire [63:0] iWriteData, iRegA0;
-input wire iCLK, iCLR, iRegWrite, iA0en;
-output wire [63:0] oReadData1, oReadData2, oRegDisp;
+//iXXXXX = sinais de entrada
+//oXXXXX = sinais de saida
+input wire [4:0] iAddressRm, iAddressRn, iAddressRt,
+	iRegisterShow;
+input wire [63:0] iWriteData;
+input wire iCLK, iReset, iRegControlWrite;
+output wire [63:0] oRead1, oRead2, oRegisterShow;
 
-/* Local register bank */
-reg [31:0] registers[31:0];
+//Definindo os registradores de 64 bits
+reg [31:0] registers[63:0];
 
 integer i;
 
@@ -26,22 +27,22 @@ initial
 begin
 	for (i = 0; i <= 31; i = i + 1)
 	begin
-		registers[i] = 64'b0;
+		registers[i] = 64'b0;	// Zerando os registradores
 	end
-	registers[5'd28] = 64'h7fffeffc;  // $sp = Maximo - 33
+	registers[5'd28] = 64'h7fffeffc;  // Definindo o sp
 end
 
-/* Output definition */
-assign oReadData1 =	registers[iReadRegister1];
-assign oReadData2 =	registers[iReadRegister2];
+//Passando o conteudo dos registradores para as saidas
+assign oRead1 =	registers[iAddressRm];
+assign oRead2 =	registers[iAddressRn];
 
-assign oRegDisp =	registers[iRegDispSelect];
+assign oRegisterShow =	registers[iRegisterShow];
 
 
-/* Main block for writing and reseting */
+//Escrevendo dados nos registradores
 always @(posedge iCLK)
 begin
-	if (iCLR)
+	if (iReset)
 	begin
 		for (i = 1; i <= 31; i = i + 1)
 		begin
@@ -49,17 +50,13 @@ begin
 		end
 		registers[5'd28] = 64'h7fffeffc;
 	end
-	else if (iCLK && iRegWrite)
+	else if (iCLK && iRegControlWrite)
 	begin
-		if (iWriteRegister != 5'd31)
+		if (iAddressRt != 5'd31)
 		begin
-			registers[iWriteRegister] =	iWriteData;
+			registers[iAddressRt] =	iWriteData;
 		end
 	end
-
-	/* Writing contents of iRegA0 into $a0 */
-	if(iA0en)
-		registers[5'd4] = iRegA0;
 end
 
 endmodule

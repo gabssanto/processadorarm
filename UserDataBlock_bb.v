@@ -1,4 +1,4 @@
-// megafunction wizard: %RAM: 1-PORT%VBB%
+/ megafunction wizard: %RAM: 1-PORT%VBB%
 // GENERATION: STANDARD
 // VERSION: WM1.0
 // MODULE: altsyncram 

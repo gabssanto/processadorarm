@@ -4,519 +4,179 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "oMemData[0]",
+					"name" : "wControlReg2Loc",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[1]",
+					"name" : "wControlOpcode[0]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[2]",
+					"name" : "wControlOpcode[1]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[3]",
+					"name" : "wControlOpcode[2]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[4]",
+					"name" : "wControlOpcode[3]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[5]",
+					"name" : "wControlOpcode[4]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[6]",
+					"name" : "wControlOpcode[5]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[7]",
+					"name" : "wControlOpcode[6]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[8]",
+					"name" : "wControlOpcode[7]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[9]",
+					"name" : "wControlOpcode[8]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[10]",
+					"name" : "wControlOpcode[9]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[11]",
+					"name" : "wControlOpcode[10]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[12]",
+					"name" : "woInstruction[0]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[13]",
+					"name" : "woInstruction[1]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[14]",
+					"name" : "woInstruction[2]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[15]",
+					"name" : "woInstruction[3]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[16]",
+					"name" : "woInstruction[4]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[17]",
+					"name" : "woInstruction[5]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[18]",
+					"name" : "woInstruction[6]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[19]",
+					"name" : "woInstruction[7]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[20]",
+					"name" : "woInstruction[8]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[21]",
+					"name" : "woInstruction[9]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[22]",
+					"name" : "woInstruction[10]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[23]",
+					"name" : "woInstruction[11]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[24]",
+					"name" : "woInstruction[12]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[25]",
+					"name" : "woInstruction[13]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[26]",
+					"name" : "woInstruction[14]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[27]",
+					"name" : "woInstruction[15]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[28]",
+					"name" : "woInstruction[16]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[29]",
+					"name" : "woInstruction[17]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[30]",
+					"name" : "woInstruction[18]",
 					"strict" : false
 				},
 				{
-					"name" : "oMemData[31]",
+					"name" : "woInstruction[19]",
 					"strict" : false
 				},
 				{
-					"name" : "iAddress[44]",
+					"name" : "woInstruction[20]",
 					"strict" : false
 				},
 				{
-					"name" : "iAddress[45]",
+					"name" : "woInstruction[21]",
 					"strict" : false
 				},
 				{
-					"name" : "iAddress[46]",
+					"name" : "woInstruction[22]",
 					"strict" : false
 				},
 				{
-					"name" : "iAddress[47]",
+					"name" : "woInstruction[23]",
 					"strict" : false
 				},
 				{
-					"name" : "iAddress[48]",
+					"name" : "woInstruction[24]",
 					"strict" : false
 				},
 				{
-					"name" : "iAddress[49]",
+					"name" : "woInstruction[25]",
 					"strict" : false
 				},
 				{
-					"name" : "iAddress[25]",
+					"name" : "woInstruction[26]",
 					"strict" : false
 				},
 				{
-					"name" : "iAddress[38]",
+					"name" : "woInstruction[27]",
 					"strict" : false
 				},
 				{
-					"name" : "iAddress[39]",
+					"name" : "woInstruction[28]",
 					"strict" : false
 				},
 				{
-					"name" : "iAddress[40]",
+					"name" : "woInstruction[29]",
 					"strict" : false
 				},
 				{
-					"name" : "iAddress[41]",
+					"name" : "woInstruction[30]",
 					"strict" : false
 				},
 				{
-					"name" : "iAddress[42]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[43]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[32]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[33]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[34]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[35]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[36]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[37]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[26]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[27]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[28]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[29]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[30]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[31]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[14]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[15]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[16]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[17]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[18]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[19]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[20]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[21]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[22]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[23]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[24]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[55]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[61]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[62]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[63]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[50]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[51]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[52]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[53]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[54]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[56]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[57]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[58]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[59]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[60]",
-					"strict" : false
-				},
-				{
-					"name" : "iCLKMem",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[0]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[2]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[3]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[4]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[5]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[6]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[7]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[8]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[9]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[10]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[11]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[12]",
-					"strict" : false
-				},
-				{
-					"name" : "iAddress[13]",
-					"strict" : false
-				},
-				{
-					"name" : "iCLK",
-					"strict" : false
-				},
-				{
-					"name" : "iMemWrite",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[1]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[2]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[3]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[4]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[5]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[6]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[7]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[8]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[9]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[10]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[11]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[12]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[13]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[14]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[15]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[16]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[17]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[18]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[19]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[20]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[21]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[22]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[23]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[24]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[25]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[26]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[27]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[28]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[29]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[30]",
-					"strict" : false
-				},
-				{
-					"name" : "iWriteData[31]",
+					"name" : "woInstruction[31]",
 					"strict" : false
 				}
 			]

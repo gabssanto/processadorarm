@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Sun Jun 16 19:56:07 2019
+Analysis & Synthesis Status : Successful - Tue Jun 18 20:14:43 2019
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : uniciclo
-Top-level Entity Name : DataMemory
+Top-level Entity Name : DataPath
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 160
-Total pins : 131
-Total virtual pins : 65
-Total block memory bits : 524,288
+Total registers : 286
+Total pins : 190
+Total virtual pins : 1
+Total block memory bits : 1,179,648
 Total DSP Blocks : 0
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0

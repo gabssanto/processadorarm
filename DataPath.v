@@ -156,6 +156,17 @@ DataMemory memData(
 	.iMemWrite(wControlMemWrite),
 	.oMemData(wReadData)
 );
+
+CodeMemory codeData(
+	.iCLK(iCLK),
+	.iCLKMem(iCLKMem),
+	.iAddress(wPC),
+	.iWriteData(ZERO),
+	.iMemRead(wControlMemRead),
+	.iMemWrite(wControlMemWrite),
+	.oMemData(wInstruction)
+	
+);
 //Control
 
 always @(wControlReg2Loc)

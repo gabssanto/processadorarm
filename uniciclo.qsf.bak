@@ -1,0 +1,181 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2018  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+# Date created = 09:09:13  June 10, 2019
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		uniciclo_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone V"
+set_global_assignment -name DEVICE 5CSEMA5F31C6
+set_global_assignment -name TOP_LEVEL_ENTITY TopDE
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 18.1.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:09:13  JUNE 10, 2019"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.0.0 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name BOARD "DE1-SoC Board"
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VERILOG_INPUT_VERSION SYSTEMVERILOG_2005
+set_global_assignment -name VERILOG_SHOW_LMF_MAPPING_MESSAGES OFF
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name VIRTUAL_PIN ON -to Decoder0
+set_instance_assignment -name VIRTUAL_PIN ON -to Equal0
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux0
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux1
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux2
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux3
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux4
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux5
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux6
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux7
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux8
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux9
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux10
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux11
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux12
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux13
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux14
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux15
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux16
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux17
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux18
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux19
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux20
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux21
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux22
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux23
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux24
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux25
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux26
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux27
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux28
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux29
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux30
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux31
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux32
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux33
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux34
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux35
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux36
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux37
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux38
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux39
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux40
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux41
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux42
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux43
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux44
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux45
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux46
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux47
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux48
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux49
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux50
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux51
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux52
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux53
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux54
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux55
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux56
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux57
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux58
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux59
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux60
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux61
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux62
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux63
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux64
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux65
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux66
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux67
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux68
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux69
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux70
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux71
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux72
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux73
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux74
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux75
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux76
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux77
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux78
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux79
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux80
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux81
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux82
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux83
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux84
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux85
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux86
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux87
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux88
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux89
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux90
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux91
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux92
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux93
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux94
+set_instance_assignment -name VIRTUAL_PIN ON -to Mux95
+set_instance_assignment -name VIRTUAL_PIN ON -to i
+set_instance_assignment -name VIRTUAL_PIN ON -to iA0en
+set_instance_assignment -name VIRTUAL_PIN ON -to iCLK
+set_instance_assignment -name VIRTUAL_PIN ON -to iCLR
+set_instance_assignment -name VIRTUAL_PIN ON -to iRegWrite
+set_instance_assignment -name VIRTUAL_PIN ON -to iReadRegister1
+set_instance_assignment -name VIRTUAL_PIN ON -to iReadRegister2
+set_instance_assignment -name VIRTUAL_PIN ON -to iRegA0
+set_instance_assignment -name VIRTUAL_PIN ON -to iRegDispSelect
+set_instance_assignment -name VIRTUAL_PIN ON -to iWriteData
+set_instance_assignment -name VIRTUAL_PIN ON -to iWriteRegister
+set_instance_assignment -name VIRTUAL_PIN ON -to oReadData1
+set_instance_assignment -name VIRTUAL_PIN ON -to oReadData2
+set_instance_assignment -name VIRTUAL_PIN ON -to oRegDisp
+set_instance_assignment -name VIRTUAL_PIN ON -to registers
+set_global_assignment -name VERILOG_FILE TopDE.v
+set_global_assignment -name VERILOG_FILE ALU.v
+set_global_assignment -name VERILOG_FILE Parametros.v
+set_global_assignment -name VERILOG_FILE ALUControl.v
+set_global_assignment -name VERILOG_FILE Control.v
+set_global_assignment -name VERILOG_FILE DataPath.v
+set_global_assignment -name VERILOG_FILE Registers.v
+set_global_assignment -name VERILOG_FILE decoder7.v
+set_global_assignment -name VERILOG_FILE DataMemory.v
+set_global_assignment -name VERILOG_FILE CodeMemory.v
+set_global_assignment -name QIP_FILE UserDataBlock.qip
+set_global_assignment -name QIP_FILE UserCodeBlock.qip
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

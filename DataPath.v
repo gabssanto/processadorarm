@@ -15,19 +15,19 @@ module DataPath (
 	iCLK50,
 	iReset,	//rst
 	wPC,
-	wControlReg2Loc,	//RegDst
-	wControlALUSrc,	//OrigALU 
-	wControlMemtoReg,	//mem2reg
-	wControlRegWrite,
-	wControlMemRead,
+	wControlALUOp,
 	wControlMemWrite,
-	wControlOrigemPC,
-	wControlOpcode,
-	wControlBranch,	// VER SE REALMENTE VAI SER UTIL 
+	wControlMemRead,
+	wControlRegWrite,	
+	wControlReg2Loc,	//RegDst
 	wRegisterShowSelect,			//wRegDispSelect
 	wRegisterShow, 				//wRegDisp
-	wControlALUOp,
+	wControlOpcode,
 	woInstruction,					//woInstr
+	wControlALUSrc,	//OrigALU 
+	wControlMemtoReg,	//mem2reg
+	wControlOrigemPC,
+	//wControlBranch,	// VER SE REALMENTE VAI SER UTIL 
 	//wDebug
 );
 
@@ -42,7 +42,7 @@ output wire [63:0] wPC, wRegisterShow;
 output wire [31:0] woInstruction;
 output wire wControlRegWrite, wControlMemRead, wControlMemWrite;
 output wire [1:0] wControlALUOp, wControlOrigemPC;						
-output wire wControlReg2Loc, wControlALUSrc, wControlMemtoReg, wControlBranch;//ACHO QUE VAI SER UTIL O BRANCH
+output wire wControlReg2Loc, wControlALUSrc, wControlMemtoReg; //wControlBranch;//ACHO QUE VAI SER UTIL O BRANCH
 output wire [10:0] wControlOpcode;
 //Para Debug
 //output wire [63:0] wDebug;
@@ -121,7 +121,7 @@ assign wAddressRt = wInstruction[4:0];
 assign woInstruction = wInstruction;
 assign wZero32 = 32'b0;
 assign wInstructionExtended = {wZero32, wInstruction};
-assign wBranchANDZero = wZero & wControlBranch;
+//assign wBranchANDZero = wZero & wControlBranch;
 
 //Memoria de Instrucoes
 
@@ -169,7 +169,21 @@ CodeMemory codeData(
 );
 //Control
 
-always @(wControlReg2Loc)
+Control control(
+	.iCLK(iCLK),
+	.iInstruction(woInstruction),
+	.Reg2Loc(wControlReg2Loc),
+	.Branch(wBranch),
+	.MemRead(wControlMemRead),
+	.MemtoReg(wControlMemtoReg),
+	.ALUOp(wControlALUOp),
+	.MemWrite(wControlMemWrite),
+	.ALUSrc(wControlALUSrc),
+	.RegWrite(wControlRegWrite)
+);
+
+
+/*always @(wControlReg2Loc)
 begin
 	case(wControlReg2Loc)
 		1'b0:
@@ -189,7 +203,7 @@ begin
 			wControlALUSrc <= wInstructionExtended;
 	endcase
 end
-
+*/
 always @(wControlOrigemPC)
 begin
 	case(wControlOrigemPC)
@@ -200,7 +214,7 @@ begin
 			wControlOrigemPC <= wBranchANDZero;
 	endcase
 end
-
+/*
 always @(wControlMemtoReg)
 begin
 	case(wControlMemtoReg)
@@ -210,7 +224,7 @@ begin
 		wControlMemtoReg <= wReadData;
 	endcase
 end
-
+*/
 always @(posedge iReset)
 begin
 	if(iReset)

@@ -29,9 +29,9 @@ module TopDE (iCLK_50,
 /* I/O type definition */
 input iCLK_50;
 input [3:0] iKEY;
-input [17:0] iSW;
-output [8:0] oLEDG;
-output [17:0] oLEDR;
+input [9:0] iSW;
+output [7:0] oLEDG;
+output [9:0] oLEDR;
 output [6:0] oHEX0_D, oHEX1_D, oHEX2_D, oHEX3_D, oHEX4_D, oHEX5_D, oHEX6_D, oHEX7_D;
 output oHEX0_DP, oHEX1_DP, oHEX2_DP, oHEX3_DP, oHEX4_DP, oHEX5_DP, oHEX6_DP, oHEX7_DP;
 
@@ -42,39 +42,50 @@ wire CLK, clock50_ctrl;
 integer CLKCount, CLKCount2, CLKCount5;
 
 /* Local wires */
-wire [31:0] PC, wRegDisp, wRegA0, extOpcode, extFunct, wOutput, wInstr, wDebug;
+wire [63:0] PC, wRegDisp, wRegA0, extOpcode, extFunct, wOutput,  wDebug;
+wire [31:0] wInstr;
 wire [1:0] ALUOp,OrigALU, RegDst, Mem2Reg, OrigPC;
 wire MemWrite, MemRead, RegWrite;
 wire [4:0] wRegDispSelect;
-wire [5:0] wOpcode, wFunct;
+wire [10:0] wOpcode;
+wire [1:0] wSelectPlaquinha;
 
  
 /* LEDs sinais de controle */
-assign oLEDG[7:0] =	PC[9:2];
-assign oLEDG[8] =	CLK;
-assign oLEDR[1:0] =	Mem2Reg;
-assign oLEDR[3:2] =	OrigALU;
-assign oLEDR[5:4] =	RegDst;
-assign oLEDR[7:6] =	OrigPC;
-assign oLEDR[9:8] =	ALUOp;
+//assign oLEDG[7:0] =	PC[9:2];
+assign oLEDG[7] =	CLK;
+always @(posedge iSW[5])
+begin
+	if(iSW[5])
+	begin
+		oLEDR[1:0] <=	Mem2Reg;
+		oLEDR[3:2] <=	OrigALU;
+		oLEDR[5:4] <=	RegDst;
+		oLEDR[7:6] <=	OrigPC;
+		oLEDR[9:8] <=	ALUOp;
 
-assign oLEDR[10] =	RegWrite;
-assign oLEDR[11] =	MemWrite;
-assign oLEDR[12] =	MemRead;
-		
+	end
+	else
+	begin
+		oLEDR[0] <=	RegWrite;
+		oLEDR[1] <=	MemWrite;
+		oLEDR[2] <=	MemRead;
+		oLEDR[9:3] <= 6'b0;
+	end
+end
+	
 /* para apresentacao nos displays */
 assign extOpcode = {26'b0,wOpcode};
-assign extFunct = {26'b0,wFunct};
 
 /* 7 segment display register content selection */
-assign wRegDispSelect =	iSW[17:13];
+assign wRegDispSelect =	iSW[4:0];
 
 
 /* $a0 initial content, with signal extention */
-assign wRegA0 = {{24{iSW[7]}},iSW[7:0]};
+//assign wRegA0 = {{24{iSW[7]}},iSW[7:0]};
 
 
-assign wOutput	= iSW[12] ?
+/*assign wOutput	= iSW[12] ?
 				(iSW[17] ?
 					PC :
 					(iSW[16] ?
@@ -90,9 +101,19 @@ assign wOutput	= iSW[12] ?
 						)
 					)
 				) :
-				wRegDisp;
+				wRegDisp;*/
 				
-
+assign wSelectPlaquinha = iSW[7:6];
+				
+always @(wSelectPlaquinha)
+begin
+	case(wSelectPlaquinha)
+		2'd0: wOutput <= PC;
+		2'd1: wOutput <= wInstr;
+		2'd2: wOutput <= extOpcode;
+		2'd3: wOutput <= wRegDisp;
+	endcase
+end
 /* Clocks */
 assign CLK	= CLKSelectAuto ?
 				(CLKSelectFast ?
@@ -168,30 +189,26 @@ end
 
 /* MIPS Datapath instantiation */
 
-Datapath Datapath0 (
+DataPath Datapath0 (
 	.iCLK(CLK),
-	.iCLKMem(CLK_5),
+	.iCLKMemory(CLK_5),
 	.iCLK50(iCLK_50),
-	.iRST(~iKEY[0]),
-	.wiRegA0(wRegA0),
-	.wCInputA0En(iSW[8]),
+	.iReset(~iKEY[0]),
 	.wPC(PC),
-	.wCALUOp(ALUOp),
-	.wCMemWrite(MemWrite),
-	.wCMemRead(MemRead),
-	.wCRegWrite(RegWrite),
-	.wCRegDst(RegDst),
-	.wRegDispSelect(wRegDispSelect),
-	.wRegDisp(wRegDisp),
-	.wOpcode(wOpcode),
-	.wFunct(wFunct),
-	.woInstr(wInstr),
-	.wCOrigALU(OrigALU),
-	.wCMem2Reg(Mem2Reg),
-	.wCOrigPC(OrigPC),
-	.wDebug(wDebug)	
-	);
-
+	.wControlALUOp(ALUOp),
+	.wControlMemWrite(MemWrite),
+	.wControlMemRead(MemRead),
+	.wControlRegWrite(RegWrite),
+	.wControlReg2Loc(RegDst),
+	.wRegisterShowSelect(wRegDispSelect),
+	.wRegisterShow(wRegDisp),
+	.wControlOpcode(wOpcode),
+	.woInstruction(wInstr),
+	.wControlALUSrc(OrigALU),
+	.wControlMemtoReg(Mem2Reg),
+	.wControlOrigemPC(OrigPC)
+	//.wDebug(wDebug)	
+);
 	
 /* 7 segment display instantiations */
 

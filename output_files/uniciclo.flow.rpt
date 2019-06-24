@@ -1,5 +1,5 @@
 Flow report for uniciclo
-Tue Jun 18 20:20:56 2019
+Mon Jun 24 15:13:55 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,18 +40,18 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue Jun 18 20:20:20 2019       ;
+; Flow Status                     ; Successful - Mon Jun 24 15:13:04 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; uniciclo                                    ;
-; Top-level Entity Name           ; DataPath                                    ;
+; Top-level Entity Name           ; TopDE                                       ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 232 / 32,070 ( < 1 % )                      ;
-; Total registers                 ; 298                                         ;
-; Total pins                      ; 190 / 457 ( 42 % )                          ;
-; Total virtual pins              ; 1                                           ;
-; Total block memory bits         ; 1,179,648 / 4,065,280 ( 29 % )              ;
+; Logic utilization (in ALMs)     ; 288 / 32,070 ( < 1 % )                      ;
+; Total registers                 ; 303                                         ;
+; Total pins                      ; 97 / 457 ( 21 % )                           ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 1,572,864 / 4,065,280 ( 39 % )              ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/18/2019 20:12:48 ;
+; Start date & time ; 06/24/2019 15:04:25 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; uniciclo            ;
 +-------------------+---------------------+
@@ -78,17 +78,16 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 180454980093428.156089956711792        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 180454980093428.156139946315096        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
-; MISC_FILE                           ; UserDataBlock_bb.v                     ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; DataPath    ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; DataPath    ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; DataPath    ; Top        ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; TopDE       ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; TopDE       ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; TopDE       ; Top        ;
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --         ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --         ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --         ;
-; TOP_LEVEL_ENTITY                    ; DataPath                               ; uniciclo      ; --          ; --         ;
+; TOP_LEVEL_ENTITY                    ; TopDE                                  ; uniciclo      ; --          ; --         ;
 ; VERILOG_INPUT_VERSION               ; SystemVerilog_2005                     ; Verilog_2001  ; --          ; --         ;
 ; VERILOG_SHOW_LMF_MAPPING_MESSAGES   ; Off                                    ; --            ; --          ; --         ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
@@ -99,11 +98,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:01:53     ; 1.0                     ; 4916 MB             ; 00:02:21                           ;
-; Fitter               ; 00:04:44     ; 1.1                     ; 6310 MB             ; 00:05:35                           ;
-; Assembler            ; 00:00:36     ; 1.0                     ; 4900 MB             ; 00:00:20                           ;
-; Timing Analyzer      ; 00:00:32     ; 1.3                     ; 5201 MB             ; 00:00:34                           ;
-; Total                ; 00:07:45     ; --                      ; --                  ; 00:08:50                           ;
+; Analysis & Synthesis ; 00:01:43     ; 1.0                     ; 4915 MB             ; 00:02:10                           ;
+; Fitter               ; 00:05:42     ; 1.1                     ; 6349 MB             ; 00:06:08                           ;
+; Assembler            ; 00:00:39     ; 1.0                     ; 4903 MB             ; 00:00:19                           ;
+; Timing Analyzer      ; 00:00:48     ; 1.4                     ; 5230 MB             ; 00:00:39                           ;
+; Total                ; 00:08:52     ; --                      ; --                  ; 00:09:16                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

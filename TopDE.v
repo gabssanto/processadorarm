@@ -12,27 +12,27 @@ em 2010/1 na disciplina OAC
  Prof. Marcus Vinicius Lamar   2010/2
 
  */
-module TopDE (iCLK_50, 
-			  iKEY, 
-			  oHEX0_D, oHEX0_DP, 
-			  oHEX1_D, oHEX1_DP, 
-			  oHEX2_D, oHEX2_DP,
-			  oHEX3_D, oHEX3_DP,
-			  oHEX4_D, oHEX4_DP,
-			  oHEX5_D, oHEX5_DP,
-			  oHEX6_D, oHEX6_DP,
-			  oHEX7_D, oHEX7_DP,
-			  oLEDG, 
-			  oLEDR, 
-			  iSW);
+module TopDE (CLK_50, 
+			  KEY, 
+			  HEX0, oHEX0_DP, 
+			  HEX1, oHEX1_DP, 
+			  HEX2, oHEX2_DP,
+			  HEX3, oHEX3_DP,
+			  HEX4, oHEX4_DP,
+			  HEX5, oHEX5_DP,
+			  HEX6, oHEX6_DP,
+			  HEX7, oHEX7_DP,
+			  LEDG, 
+			  LEDR, 
+			  SW);
 
 /* I/O type definition */
-input iCLK_50;
-input [3:0] iKEY;
-input [9:0] iSW;
-output [7:0] oLEDG;
-output [9:0] oLEDR;
-output [6:0] oHEX0_D, oHEX1_D, oHEX2_D, oHEX3_D, oHEX4_D, oHEX5_D, oHEX6_D, oHEX7_D;
+input CLK_50;
+input [3:0] KEY;
+input [9:0] SW;
+output [7:0] LEDG;
+output [9:0] LEDR;
+output [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7;
 output oHEX0_DP, oHEX1_DP, oHEX2_DP, oHEX3_DP, oHEX4_DP, oHEX5_DP, oHEX6_DP, oHEX7_DP;
 
 /* Local Clock signals */
@@ -53,24 +53,24 @@ wire [1:0] wSelectPlaquinha;
  
 /* LEDs sinais de controle */
 //assign oLEDG[7:0] =	PC[9:2];
-assign oLEDG[7] =	CLK;
-always @(posedge iSW[5])
+assign LEDG[7] =	CLK;
+always @(posedge SW[5])
 begin
-	if(iSW[5])
+	if(SW[5])
 	begin
-		oLEDR[1:0] <=	Mem2Reg;
-		oLEDR[3:2] <=	OrigALU;
-		oLEDR[5:4] <=	RegDst;
-		oLEDR[7:6] <=	OrigPC;
-		oLEDR[9:8] <=	ALUOp;
+		LEDR[1:0] <=	Mem2Reg;
+		LEDR[3:2] <=	OrigALU;
+		LEDR[5:4] <=	RegDst;
+		LEDR[7:6] <=	OrigPC;
+		LEDR[9:8] <=	ALUOp;
 
 	end
 	else
 	begin
-		oLEDR[0] <=	RegWrite;
-		oLEDR[1] <=	MemWrite;
-		oLEDR[2] <=	MemRead;
-		oLEDR[9:3] <= 6'b0;
+		LEDR[0] <=	RegWrite;
+		LEDR[1] <=	MemWrite;
+		LEDR[2] <=	MemRead;
+		LEDR[9:3] <= 6'b0;
 	end
 end
 	
@@ -78,7 +78,7 @@ end
 assign extOpcode = {26'b0,wOpcode};
 
 /* 7 segment display register content selection */
-assign wRegDispSelect =	iSW[4:0];
+assign wRegDispSelect =	SW[4:0];
 
 
 /* $a0 initial content, with signal extention */
@@ -103,7 +103,7 @@ assign wRegDispSelect =	iSW[4:0];
 				) :
 				wRegDisp;*/
 				
-assign wSelectPlaquinha = iSW[7:6];
+assign wSelectPlaquinha = SW[7:6];
 				
 always @(wSelectPlaquinha)
 begin
@@ -132,17 +132,17 @@ begin
 	CLK_5 <= 1'b0;
 end
 
-always @(posedge iKEY[3])
+always @(posedge KEY[3])
 begin
 	CLKManual <= ~CLKManual;       // Manual
 end
 
-always @(posedge iKEY[2])
+always @(posedge KEY[2])
 begin
 	CLKSelectAuto <= ~CLKSelectAuto;
 end
 
-always @(posedge iKEY[1])
+always @(posedge KEY[1])
 begin
 	CLKSelectFast <= ~CLKSelectFast;
 end
@@ -192,8 +192,8 @@ end
 DataPath Datapath0 (
 	.iCLK(CLK),
 	.iCLKMemory(CLK_5),
-	.iCLK50(iCLK_50),
-	.iReset(~iKEY[0]),
+	.iCLK50(CLK_50),
+	.iReset(~KEY[0]),
 	.wPC(PC),
 	.wControlALUOp(ALUOp),
 	.wControlMemWrite(MemWrite),
@@ -223,42 +223,42 @@ assign oHEX7_DP=1'b1;
 
 Decoder7 Dec0 (
 	.In(wOutput[3:0]),
-	.Out(oHEX0_D)
+	.Out(HEX0)
 	);
 
 Decoder7 Dec1 (
 	.In(wOutput[7:4]),
-	.Out(oHEX1_D)
+	.Out(HEX1)
 	);
 
 Decoder7 Dec2 (
 	.In(wOutput[11:8]),
-	.Out(oHEX2_D)
+	.Out(HEX2)
 	);
 
 Decoder7 Dec3 (
 	.In(wOutput[15:12]),
-	.Out(oHEX3_D)
+	.Out(HEX3)
 	);
 
 Decoder7 Dec4 (
 	.In(wOutput[19:16]),
-	.Out(oHEX4_D)
+	.Out(HEX4)
 	);
 
 Decoder7 Dec5 (
 	.In(wOutput[23:20]),
-	.Out(oHEX5_D)
+	.Out(HEX5)
 	);
 
 Decoder7 Dec6 (
 	.In(wOutput[27:24]),
-	.Out(oHEX6_D)
+	.Out(HEX6)
 	);
 
 Decoder7 Dec7 (
 	.In(wOutput[31:28]),
-	.Out(oHEX7_D)
+	.Out(HEX7)
 	);
 
 endmodule

@@ -4,179 +4,259 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "wControlReg2Loc",
+					"name" : "HEX0[0]",
 					"strict" : false
 				},
 				{
-					"name" : "wControlOpcode[0]",
+					"name" : "HEX0[1]",
 					"strict" : false
 				},
 				{
-					"name" : "wControlOpcode[1]",
+					"name" : "HEX0[2]",
 					"strict" : false
 				},
 				{
-					"name" : "wControlOpcode[2]",
+					"name" : "HEX0[3]",
 					"strict" : false
 				},
 				{
-					"name" : "wControlOpcode[3]",
+					"name" : "HEX0[4]",
 					"strict" : false
 				},
 				{
-					"name" : "wControlOpcode[4]",
+					"name" : "HEX0[5]",
 					"strict" : false
 				},
 				{
-					"name" : "wControlOpcode[5]",
+					"name" : "HEX0[6]",
 					"strict" : false
 				},
 				{
-					"name" : "wControlOpcode[6]",
+					"name" : "HEX1[0]",
 					"strict" : false
 				},
 				{
-					"name" : "wControlOpcode[7]",
+					"name" : "HEX1[1]",
 					"strict" : false
 				},
 				{
-					"name" : "wControlOpcode[8]",
+					"name" : "HEX1[2]",
 					"strict" : false
 				},
 				{
-					"name" : "wControlOpcode[9]",
+					"name" : "HEX1[3]",
 					"strict" : false
 				},
 				{
-					"name" : "wControlOpcode[10]",
+					"name" : "HEX1[4]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[0]",
+					"name" : "HEX1[5]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[1]",
+					"name" : "HEX1[6]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[2]",
+					"name" : "HEX2[0]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[3]",
+					"name" : "HEX2[1]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[4]",
+					"name" : "HEX2[2]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[5]",
+					"name" : "HEX2[3]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[6]",
+					"name" : "HEX2[4]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[7]",
+					"name" : "HEX2[5]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[8]",
+					"name" : "HEX2[6]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[9]",
+					"name" : "HEX3[0]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[10]",
+					"name" : "HEX3[1]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[11]",
+					"name" : "HEX3[2]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[12]",
+					"name" : "HEX3[3]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[13]",
+					"name" : "HEX3[4]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[14]",
+					"name" : "HEX3[5]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[15]",
+					"name" : "HEX3[6]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[16]",
+					"name" : "HEX4[0]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[17]",
+					"name" : "HEX4[1]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[18]",
+					"name" : "HEX4[2]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[19]",
+					"name" : "HEX4[3]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[20]",
+					"name" : "HEX4[4]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[21]",
+					"name" : "HEX4[5]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[22]",
+					"name" : "HEX4[6]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[23]",
+					"name" : "HEX5[0]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[24]",
+					"name" : "HEX5[1]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[25]",
+					"name" : "HEX5[2]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[26]",
+					"name" : "HEX5[3]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[27]",
+					"name" : "HEX5[4]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[28]",
+					"name" : "HEX5[5]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[29]",
+					"name" : "HEX5[6]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[30]",
+					"name" : "HEX6[0]",
 					"strict" : false
 				},
 				{
-					"name" : "woInstruction[31]",
+					"name" : "HEX6[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX6[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX6[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX6[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX6[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX6[6]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX7[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX7[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX7[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX7[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX7[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX7[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX7[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDG[7]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[9]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[7]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[3]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[5]",
 					"strict" : false
 				}
 			]
